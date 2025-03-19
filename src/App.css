@@ -1,38 +1,793 @@
-.App {
+/* Déclaration des polices personnalisées */
+@font-face {
+  font-family: Central; /* Nom de la police utilisée */
+  src: url('./assets/font/CentraNo2-Bold.ttf'); /* Chemin vers la version Bold */
+  font-weight: 700; /* Poids spécifique pour cette variante */
+}
+
+@font-face {
+  font-family: Central;
+  src: url('./assets/font/CentraNo2-Medium.ttf'); /* Chemin vers la version Medium */
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Central;
+  src: url('./assets/font/CentraNo2-Book.ttf'); /* Chemin vers la version Book */
+  font-weight: 400;
+}
+
+/* Styles généraux pour le corps de la page */
+body {
+  font-weight: 400; /* Poids de police par défaut */
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+  background-image: url('./assets/img/black-white-mountain-background.jpg'); /* Image de fond */
+  background-attachment: fixed; /* L'arrière-plan reste fixe */
+  background-size: cover; /* L'image couvre toute la surface */
+  background-position: center center; /* Centre l'image */
+  background-repeat: no-repeat; /* L'image ne se répète pas */
+  color: #fff !important; /* Texte en blanc */
+  font-family: 'Central', sans-serif !important; /* Utilisation de la police personnalisée */
+}
+
+#home, #skills, #experiences, #projects, #passions, #contact {
+  scroll-margin-top: 80px; /* Compense la hauteur de la navbar */
+}
+
+/************ Navbar Css ************/
+/* Styles pour la barre de navigation */
+nav.navbar {
+  padding: 12px 0; /* Espacement vertical */
+  position: fixed; /* Fixe la barre en haut de la page */
+  width: 100%; /* Occupe toute la largeur */
+  top: 0; /* Positionne la barre en haut */
+  z-index: 9999; /* Place la barre au-dessus des autres éléments */
+  transition: 0.32s ease-in-out; /* Animation de transition */
+}
+
+/* Suppression des marges/paddings inutiles */
+nav.navbar .container {
+  margin: 0; /* Supprime les espaces externes */
+  max-width: 100%; /* Étend sur toute la largeur */
+}
+
+/* Organisation des éléments de navigation avec Flexbox */
+nav.navbar .navbar-nav {
+  display: flex; /* Active Flexbox */
+  gap: 20px; /* Ajoute un espacement entre les éléments */
+}
+
+/* Styles pour les liens dans la barre de navigation */
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 400; /* Poids du texte */
+  letter-spacing: 0.8px; /* Espacement des lettres */
+  font-size: 18px; /* Taille de police */
+  opacity: 0.75; /* Transparence initiale */
+  padding: 0 15px; /* Espacement horizontal supplémentaire */
+}
+
+/* Les icônes sociales restent fixes */
+.social-icon {
+  position: absolute; /* Positionner en dehors du flux normal */
+  right: 15px; /* Décalage par rapport au bord droit */
+  top: 5px; /* Décalage par rapport au haut */
+  display: flex;
+  gap: 10px; /* Espacement entre les icônes */
+  z-index: 1000; /* Toujours au-dessus des autres éléments */
+}
+
+/* Styles pour la barre de navigation après défilement */
+nav.navbar.scrolled {
+  background: rgb(35, 35, 35); /* Fond gris foncé */
+}
+
+
+nav.navbar.scrolled .navbar-nav .nav-link.navbar-link {
+  color: #fff !important; /* Texte blanc */
+}
+
+/* Style normal après scroll */
+nav.navbar.scrolled .social-icon a {
+  background: rgb(62, 62, 62); /* Fond gris foncé */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative; /* Permet de gérer le pseudo-élément */
+  transition: background 0.3s ease-in-out 0.1s; /* Légère temporisation */
+}
+
+/* Icône blanche après scroll */
+nav.navbar.scrolled .social-icon a img {
+  filter: brightness(0) invert(1); /* Icône blanche */
+  transition: filter 0.3s ease-in-out; /* Transition fluide */
+}
+
+/* Animation au survol des icônes sociales */
+nav.navbar.scrolled .social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #fff; /* Fond blanc animé */
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0; /* Caché au départ */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+/* Effet au survol */
+nav.navbar.scrolled .social-icon a:hover::before {
+  transform: scale(1);
+  opacity: 1; /* Devient visible progressivement */
+}
+
+/* Retarde le changement du fond pour ne pas casser l'animation */
+nav.navbar.scrolled .social-icon a:hover {
+  background: #fff !important;
+  transition-delay: 0.15s; /* Laisse le temps à l'animation */
+}
+
+/* Changer l'icône en noir au survol */
+nav.navbar.scrolled .social-icon a:hover img {
+  filter: brightness(0) invert(0); /* Icône noire */
+}
+
+/* Changements de style pour les liens au survol et lorsqu'ils sont actifs */
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+  opacity: 1; /* Opacité maximale */
+}
+
+.social-icon a {
+  width: 42px; /* Taille de l'icône */
+  height: 42px; 
+  background: rgba(255, 255, 255, 0.75); /* Fond légèrement transparent */
+  display: inline-flex; /* Flexbox pour aligner le contenu */
+  border-radius: 50%; /* Forme circulaire */
+  margin-right: 10px; /* Espacement entre les icônes */
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+  line-height: 1; /* Hauteur de ligne */
+  border: 1px solid rgba(0, 0, 0, 0.8); /* Bordure translucide */
+  position: relative; /* Assurer que ::before reste attaché */
+  background: rgba(255, 255, 255, 0.75); /* Fond initial */
+  transition: background 0.3s ease-in-out; /* Douce transition */
+}
+
+/* Icône en noir par défaut */
+.social-icon a img {
+  transition: filter 0.3s ease-in-out; /* Même durée pour éviter le "saut" */
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%); /* Couleur noire de l'icône */
+}
+
+/* Pseudo-élément pour l'effet d'animation */
+.social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #2d2d2d; /* Couleur noire */
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: -1; /* S'assurer qu'il est sous l'icône */
+}
+
+/* Effet au survol */
+.social-icon a:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Changement de fond avec un léger délai */
+.social-icon a:hover {
+  background: #2d2d2d; /* Noir */
+  transition-delay: 0.15s; /* Évite que le fond cache l'animation */
+}
+
+/* Icône blanche au survol */
+.social-icon a:hover img {
+  filter: brightness(0) invert(1); /* Icône blanche */
+  transition-delay: 0.1s; /* Synchroniser avec le fond */
+}
+
+/* Ajustement pour les écrans mobiles */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 40px;
+    border: none !important;
+    z-index: 1000;
+  }
+  
+  .navbar-toggler-icon {
+    filter: invert(1); /* Inverse les couleurs (utile si l'icône est noire) */
+  }
+
+  .social-icon {
+    position: fixed; /* Toujours visible en haut à droite */
+    right: 10px;
+    top: 10px;
+  }
+
+  nav.navbar .navbar-nav {
+    margin-top: 40px; /* Ajuste selon ton besoin */
+  }
+
+  /* Styles pour les liens dans la barre de navigation */
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    color: #fff !important; /* Texte blanc */
+  }
+
+  /* Styles pour la barre de navigation après défilement */
+  nav.navbar {
+    padding: 30px;
+    background: rgb(35, 35, 35); /* Fond gris foncé */
+  }
+
+  /* Icônes sociales avec logo blanc sur fond noir */
+  .social-icon a {
+    background: #2d2d2d; /* Fond noir */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordure blanche légèrement translucide */
+  }
+
+  .social-icon a img {
+    filter: brightness(0) invert(1); /* Icônes blanches */
+    transition: filter 0.3s ease-in-out;
+  }
+
+  /* Effet de survol des icônes sociales */
+  .social-icon a:hover {
+    background: #2d2d2d; /* Fond noir */
+  }
+
+  .social-icon a:hover img {
+    filter: brightness(0) invert(1); /* Icônes blanches au survol */
+  }
+}
+
+/************ Banner Css ************/
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Utilisation de min-height au lieu de height */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  position: relative;
+  text-align: center; /* Centrer le contenu horizontalement */
+  margin-top: 80px; /* Légère marge au sommet */
+  margin-bottom: 120px; /* Espacement en bas */
+
+}
+
+/* Tagline */
+.banner .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 20%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 20px; /* Espacement sous la tagline */
+  position: relative;
+  top: 0; /* Pas de position absolue */
+  margin-top: 0; /* Pas d'espacement fixe, tout est centré */
+}
+
+/* Conteneur du contenu (image + texte) */
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #151515;
+  border-radius: 64px;
+  width: 1200px; /* Largeur fixe de la boîte */
+  height: 600px; /* Hauteur fixe du contenu */
+  min-width: 400px; /* Largeur minimale pour éviter que ça soit trop petit */
+  position: relative;
+  flex-direction: row; /* Par défaut, en ligne */
+  left: 50%;
+  transform: translateX(-50%); /* Centré horizontalement */
+  margin-top: 20px; /* Un peu d'espace sous la tagline */
+}
+
+/* Image profil */
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 40px; /* Espace entre l'image et le texte */
+}
+
+/* Contenu textuel */
+.text-content {
+  flex: 1;
+  color: white;
+  text-align: left;
+  max-width: 800px; /* Limite la largeur du texte */
+}
+
+.text-content h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 18px;
+  color: #cccccc;
+  line-height: 1.6em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+  margin-bottom: 1rem;
+}
+
+/* Transition pour l'apparition du texte */
+.text-content p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Media Queries pour ajuster la taille et l'espacement sur les petits écrans */
+@media (max-width: 1250px) {
+  .banner {
+    padding: 0 15px; /* Ajuste la largeur du padding */
+  }
+
+  .banner .tagline {
+    font-size: 18px; /* Taille de la tagline plus petite */
+  }
+
+  /* Conteneur du contenu (image + texte) */
+  .banner-content {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px; /* La largeur maximale de la boîte */
+    height: 500px; /* Réduit la hauteur */
+    flex-direction: column; /* Met les éléments en colonne sur petits écrans */
+    margin-top: 20px; /* Espacement sous la tagline */
+    background-color: #151515; /* Fond noir seulement derrière le contenu */
+    border-radius: 64px; /* Conserve les coins arrondis */
+    padding: 20px; /* Ajoute un peu de padding pour éviter que les éléments collent aux bords */
+    position: relative; /* Pour permettre le contrôle du positionnement de la photo */
+    width: auto; /* Largeur fixe de la boîte */
+    height: auto; /* Hauteur fixe du contenu */
+
+  }
+
+  .profile-image {
+    width: 150px; /* Plus petite taille pour l'image */
+    height: 150px;
+    border-radius: 50%; /* Conserve l'aspect circulaire de l'image */
+    object-fit: cover; /* Assure que l'image reste bien cadrée */
+    margin-right: 0; /* Pas d'espace entre l'image et le texte */
+    margin-bottom: 40px; /* Espacement sous l'image */
+    margin-top: 20px; /* Espacement au-dessus de la photo pour éviter qu'elle chevauche la tagline */
+  }
+
+  .text-content {
+    max-width: 100%; /* Texte prend toute la largeur */
+    text-align: center; /* Texte centré sur les petits écrans */
+    color: white; /* Texte en blanc pour contraster avec le fond noir */
+  }
+
+  .text-content h1 {
+    font-size: 24px; /* Plus petit titre */
+  }
+
+  .text-content p {
+    font-size: 16px; /* Texte plus petit */
+  }
+}
+
+/************ Skills Css ************/
+.skill {
+  position: relative;
+  padding-top: 200px; /* Réduit l'espace en haut */
+  margin-bottom: 120px; /* Réduit l'espace en bas */
+  overflow: hidden; /* Assure que les flèches ne débordent pas */
+}
+
+.skill-bx {
+  background: #151515;
+  border-radius: 64px;
+  text-align: center;
+  padding: 80px 40px; /* Réduit l'espace interne */
+  margin: -80px auto 0 auto; /* Centrer horizontalement */
+  max-width: 98%;
+}
+
+.skill h2 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.skill p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 50px 0; /* Réduit l'espace sous le paragraphe */
+}
+
+.skill-slider {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.skill-slider .item img {
+  width: 50%;
+  margin: 0 auto 15px auto;
+}
+
+.skill-slider .react-multiple-carousel__arrow--left,
+.skill-slider .react-multiple-carousel__arrow--right {
+  opacity: 0; /* Flèches invisibles par défaut */
+  transition: opacity 0.3s ease; /* Animation fluide */
+}
+
+.skill-slider .react-multiple-carousel__arrow--left {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.skill-slider .react-multiple-carousel__arrow--right {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.skill:hover .react-multiple-carousel__arrow--left,
+.skill:hover .react-multiple-carousel__arrow--right {
+  opacity: 1; /* Affiche les flèches lors du survol */
+}
+
+.background-img-skills {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -4;
+  width: 100vw;
+  height: 800px; /* Réduit la hauteur */
+}
+
+.what-i-know {
+  position: absolute;
+  top: 40px; /* Ajusté pour compenser la réduction */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  color: #666;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+/* Pour les écrans moyens (768px - 1200px) */
+@media (max-width: 1200px) and (min-width: 768px) {
+  .skill-slider .react-multiple-carousel__arrow--left {
+    left: 5px;
+  }
+  
+  .skill-slider .react-multiple-carousel__arrow--right {
+    right: 5px;
+  }
+
+  .skill-slider .item img {
+    width: 40%;
+  }
+}
+
+/* Pour les petits écrans (< 768px) */
+@media (max-width: 768px) and (min-width: 400px) {
+  .skill-slider .react-multiple-carousel__arrow--left {
+    left: -1px;
+  }
+  
+  .skill-slider .react-multiple-carousel__arrow--right {
+    right: -1px;
+  }
+
+  .skill-slider .item img {
+    width: 40%;
+  }
+}
+/************ Passions Css ************/
+
+
+/************ Projects Css ************/
+.project {
+  position: relative;
+  padding-top: 40px;
+  width: 100vw; /* Remplacez par la largeur réelle de votre image */
+  height: auto; /* Permet de conserver les proportions */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px; /* Espacement en bas */
+}
+
+.project h2 {
+  font-size: 45px;
+  font-weight: 700;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.project p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.proj-imgbx {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  width: 1000%; /* Prend toute la largeur de la colonne */
+  max-width: 400px; /* Ajuste selon la taille voulue */
+  height: 300px; /* Fixe une hauteur */
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.proj-imgbx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit bien sans déformer */
+}
+
+.proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, rgba(255, 255, 255, 0.6) -5.91%, rgba(255, 255, 255, 0.6) 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+  border-radius: inherit;
+}
+
+.proj-imgbx:hover::before {
+  height: 100%;
+}
+
+.proj-txtx {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+}
+
+.proj-imgbx:hover .proj-txtx {
+  top: 50%;
+  opacity: 1;
+}
+
+.proj-txtx h4 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
+}
+
+.proj-txtx span {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+}
+
+.background-image-right {
+  top: 20%;
+  position: absolute;
+  bottom: 0;
+  width: 35%;
+  right: 0;
+  z-index: -4;
+}
+
+/* Grille responsive centrée pour les grands écrans (plus de 1400px) */
+@media (min-width: 1480px) {
+  .project .col {
+    flex: 1 1 33.33%; /* 3 colonnes */
+  }
+
+  /* Grille */
+  .project .row {
+    display: flex;
+    gap: 40px 0; /* Espace entre les colonnes et les lignes (horizontal et vertical) */
+    min-width: 1320px; /* Limiter la largeur du container des projets */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Pour les écrans moyens (de 1040px à 1400px) */
+@media (max-width: 1480px) {
+  .project .col {
+    flex: 1 1 50%; /* 2 colonnes */
+    width: auto; /* Largeur automatique pour ne pas la forcer à 100% */
+    max-width: 900px; /* Limiter la largeur max de la colonne */
+    margin: 0; /* Enlever toute marge */
+    padding: 0; /* Enlever toute marge interne */
+  }
+
+  /* Grille */
+  .project .row {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement si nécessaire */
+    gap: 40px 0; /* Espace entre les colonnes et les lignes (horizontal et vertical) */
+    margin: 0 15px; /* Centrer le contenu */
+    padding: 0; /* Assurez-vous qu'il n'y a pas de padding supplémentaire */
+  }
+}
+
+/* Pour les écrans petits (de 1040px et moins) */
+@media (max-width: 1100px) {
+  .project .col {
+    flex: 1 1 100%; /* 1 colonne */
+    width: auto; /* Largeur automatique pour ne pas la forcer à 100% */
+    max-width: 600px; /* Limiter la largeur max de la colonne */
+    margin: 0; /* Enlever toute marge */
+    padding: 0; /* Enlever toute marge interne */
+  }
+  /* Grille */
+  .project .row {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement si nécessaire */
+    flex-direction: column; /* Met les éléments en colonne sur petits écrans */
+    position: relative;
+    width: 100%; /* Utilisation de toute la largeur de l'écran */
+    margin: 0 auto; /* Centrer le contenu */
+    padding: 0; /* Assurez-vous qu'il n'y a pas de padding supplémentaire */
+  }
+}
+
+/* Section Contact */
+
+/* Section Contact */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Centre verticalement sur toute la hauteur de la page */
+  padding: 150px 20px;
+}
+
+/* Conteneur principal */
+.contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 700px;
+  transform: translateY(-80px); /* Remonte légèrement la section */
+}
+
+/* Sous-titre */
+.contact-subtitle {
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* Box contenant le formulaire */
+.contact-bx {
+  background: #151515;
+  border-radius: 20px;
+  text-align: center;
+  padding: 60px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+/* Titre principal */
+.contact-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Formulaire */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Labels */
+.contact-form label {
+  font-size: 16px;
+  color: #ccc;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+/* Champs de saisie */
+.contact-form input,
+.contact-form textarea {
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+}
+
+/* Zone de texte */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Bouton */
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #767676;
   color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  width: 100%;
+  max-width: 250px;
+  margin: 20px auto 0 auto; /* Centrer le bouton */
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Icône dans le bouton */
+.send-icon {
+  width: 20px;
+  height: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Bouton hover */
+.contact-btn:hover {
+  background-color: #ffffff;
+  color: #000; /* Change la couleur du texte en noir */
 }
+
+.contact-btn:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+
+
