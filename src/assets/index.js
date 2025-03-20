@@ -68,6 +68,9 @@ import ensta from './icons/Logo_ENSTA_Bretagne.jpg';
 import mennais from './icons/mennais.jpg';
 import cip from './icons/cip.jpeg';
 import geii from './icons/geii.jpeg';
+import github from './icons/github.png'
+import linkedIn from './icons/linkedIn.svg'
+import instagram from './icons/instagram.svg'
 
 
 export {
@@ -140,5 +143,9 @@ export {
   ensta,
   mennais,
   cip,
-  geii
+  geii,
+
+  github,
+  linkedIn,
+  instagram,
 };

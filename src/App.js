@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';  // Pas besoin de BrowserRouter ici
+import { Routes, Route, useLocation } from 'react-router-dom';  // Ajoute useLocation ici
 import { NavBar } from './components/NavBar';
 import { Banner } from './components/Banner';
 import { Skills } from './components/Skills';
@@ -10,9 +10,15 @@ import { Contact } from "./components/Contact";
 import PassionDetails from './components/PassionDetails'; // Nouvelle page pour afficher le détail
 
 const AppContent = () => {
+  const location = useLocation();  // Récupère la localisation actuelle de l'URL
+
+  // Vérifie si on est sur la page des détails d'une passion
+  const isPassionDetailsPage = location.pathname.startsWith('/passion/');
+
   return (
     <div className="App">
-      <NavBar />
+      {/* Masquer la navbar uniquement sur la page des détails de la passion */}
+      {!isPassionDetailsPage && <NavBar />}
       
       <Routes>
         <Route path="/" element={

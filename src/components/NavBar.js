@@ -5,9 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavbarToggle from 'react-bootstrap/NavbarToggle';
 import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
-import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import { github, linkedIn, instagram } from '../assets';
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
@@ -49,14 +47,20 @@ export const NavBar = () => {
     <Navbar expand="lg" className={`${scrolled ? "scrolled" : ""} ${menuOpen ? "navbar-toggler-active" : ""}`}>
       <Container>
         <div className="social-icon">
-          <a href="#"><img src={navIcon1} alt="LinkedIn" /></a>
-          <a href="#"><img src={navIcon2} alt="Facebook" /></a>
-          <a href="#"><img src={navIcon3} alt="Instagram" /></a>
+          <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" rel="noopener noreferrer">
+            <img src={linkedIn} alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/MelDubi" target="_blank" rel="noopener noreferrer">
+            <img src={github} alt="GitHub" />
+          </a>
+          <a href="https://www.instagram.com/melvin.dubee/" target="_blank" rel="noopener noreferrer">
+            <img src={instagram} alt="Instagram" />
+          </a>
         </div>
         <NavbarToggle aria-controls="navbar-nav" onClick={handleToggle} />
         <NavbarCollapse id="navbar-nav" in={menuOpen}>
           <Nav className="navbar-nav">
-            {['home', 'experiences', 'skills', 'projects', 'passions','contact'].map((section) => (
+            {['home', 'experiences', 'skills', 'projects', 'passions', 'contact'].map((section) => (
               <Nav.Link
                 key={section}
                 onClick={() => onUpdateActiveLink(section)}

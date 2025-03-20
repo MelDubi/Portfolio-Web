@@ -341,29 +341,11 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
 /* Media Queries pour ajuster la taille et l'espacement sur les petits écrans */
 @media (max-width: 1250px) {
-  .banner {
-    padding: 0 15px; /* Ajuste la largeur du padding */
-  }
-
-  .banner .tagline {
-    font-size: 18px; /* Taille de la tagline plus petite */
-  }
-
-  /* Conteneur du contenu (image + texte) */
   .banner-content {
-    display: flex;
-    justify-content: center;
-    max-width: 1200px; /* La largeur maximale de la boîte */
-    height: 500px; /* Réduit la hauteur */
+    width: 90%; /* Réduit la largeur de la boîte sur les petits écrans */
+    height: auto; /* Hauteur automatique pour s'ajuster à l'écran */
     flex-direction: column; /* Met les éléments en colonne sur petits écrans */
-    margin-top: 20px; /* Espacement sous la tagline */
-    background-color: #151515; /* Fond noir seulement derrière le contenu */
-    border-radius: 64px; /* Conserve les coins arrondis */
-    padding: 20px; /* Ajoute un peu de padding pour éviter que les éléments collent aux bords */
-    position: relative; /* Pour permettre le contrôle du positionnement de la photo */
-    width: auto; /* Largeur fixe de la boîte */
-    height: auto; /* Hauteur fixe du contenu */
-
+    padding: 20px; /* Maintien le padding */
   }
 
   .profile-image {
@@ -372,22 +354,21 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     border-radius: 50%; /* Conserve l'aspect circulaire de l'image */
     object-fit: cover; /* Assure que l'image reste bien cadrée */
     margin-right: 0; /* Pas d'espace entre l'image et le texte */
-    margin-bottom: 40px; /* Espacement sous l'image */
+    margin-bottom: 20px; /* Espacement sous l'image */
     margin-top: 20px; /* Espacement au-dessus de la photo pour éviter qu'elle chevauche la tagline */
   }
 
   .text-content {
-    max-width: 100%; /* Texte prend toute la largeur */
-    text-align: center; /* Texte centré sur les petits écrans */
-    color: white; /* Texte en blanc pour contraster avec le fond noir */
+    text-align: center; /* Centrer le texte sur les petits écrans */
+    max-width: 100%; /* Le texte prend toute la largeur disponible */
   }
 
   .text-content h1 {
-    font-size: 24px; /* Plus petit titre */
+    font-size: 24px; /* Réduit la taille du titre */
   }
 
   .text-content p {
-    font-size: 16px; /* Texte plus petit */
+    font-size: 16px; /* Réduit la taille du texte */
   }
 }
 
@@ -504,15 +485,11 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     width: 40%;
   }
 }
-/************ Passions Css ************/
-
 
 /************ Projects Css ************/
 .project {
   position: relative;
   padding-top: 40px;
-  width: 100vw; /* Remplacez par la largeur réelle de votre image */
-  height: auto; /* Permet de conserver les proportions */
   display: flex;
   flex-direction: column;
   margin-bottom: 100px; /* Espacement en bas */
@@ -538,11 +515,8 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  width: 1000%; /* Prend toute la largeur de la colonne */
-  max-width: 400px; /* Ajuste selon la taille voulue */
   height: 300px; /* Fixe une hauteur */
+  width: 400px;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -597,74 +571,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   font-size: 15px;
   letter-spacing: 0.8px;
 }
-
-.background-image-right {
-  top: 20%;
-  position: absolute;
-  bottom: 0;
-  width: 35%;
-  right: 0;
-  z-index: -4;
-}
-
-/* Grille responsive centrée pour les grands écrans (plus de 1400px) */
-@media (min-width: 1480px) {
-  .project .col {
-    flex: 1 1 33.33%; /* 3 colonnes */
-  }
-
-  /* Grille */
-  .project .row {
-    display: flex;
-    gap: 40px 0; /* Espace entre les colonnes et les lignes (horizontal et vertical) */
-    min-width: 1320px; /* Limiter la largeur du container des projets */
-  }
-}
-
-/* Pour les écrans moyens (de 1040px à 1400px) */
-@media (max-width: 1480px) {
-  .project .col {
-    flex: 1 1 50%; /* 2 colonnes */
-    width: auto; /* Largeur automatique pour ne pas la forcer à 100% */
-    max-width: 900px; /* Limiter la largeur max de la colonne */
-    margin: 0; /* Enlever toute marge */
-    padding: 0; /* Enlever toute marge interne */
-  }
-
-  /* Grille */
-  .project .row {
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement si nécessaire */
-    gap: 40px 0; /* Espace entre les colonnes et les lignes (horizontal et vertical) */
-    margin: 0 15px; /* Centrer le contenu */
-    padding: 0; /* Assurez-vous qu'il n'y a pas de padding supplémentaire */
-  }
-}
-
-/* Pour les écrans petits (de 1040px et moins) */
-@media (max-width: 1100px) {
-  .project .col {
-    flex: 1 1 100%; /* 1 colonne */
-    width: auto; /* Largeur automatique pour ne pas la forcer à 100% */
-    max-width: 600px; /* Limiter la largeur max de la colonne */
-    margin: 0; /* Enlever toute marge */
-    padding: 0; /* Enlever toute marge interne */
-  }
-  /* Grille */
-  .project .row {
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement si nécessaire */
-    flex-direction: column; /* Met les éléments en colonne sur petits écrans */
-    position: relative;
-    width: 100%; /* Utilisation de toute la largeur de l'écran */
-    margin: 0 auto; /* Centrer le contenu */
-    padding: 0; /* Assurez-vous qu'il n'y a pas de padding supplémentaire */
-  }
-}
-
-/* Section Contact */
 
 /* Section Contact */
 .contact {
