@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MD-Portfolio-Web/static/css/main.4237448d.css",
-    "main.js": "/MD-Portfolio-Web/static/js/main.c93a6557.js",
+    "main.css": "/MD-Portfolio-Web/static/css/main.b89f6293.css",
+    "main.js": "/MD-Portfolio-Web/static/js/main.b31a10ea.js",
     "static/js/453.ace21015.chunk.js": "/MD-Portfolio-Web/static/js/453.ace21015.chunk.js",
     "static/media/black-concrete-wall.jpg": "/MD-Portfolio-Web/static/media/black-concrete-wall.62c7bdad34af7b8e3e1f.jpg",
     "static/media/D7.jpeg": "/MD-Portfolio-Web/static/media/D7.9375b1b41414e39b35c9.jpeg",
@@ -45,6 +45,7 @@
     "static/media/bolivie16.jpeg": "/MD-Portfolio-Web/static/media/bolivie16.97cadc53f80c8f904c9b.jpeg",
     "static/media/Patagonie3.jpeg": "/MD-Portfolio-Web/static/media/Patagonie3.b9943d97efaf0415d55f.jpeg",
     "static/media/bolivie3.jpeg": "/MD-Portfolio-Web/static/media/bolivie3.49ade3d933d35399c91a.jpeg",
+    "static/media/CV-DUBEE-INGENIEUR-ELECTRONIQUE.pdf": "/MD-Portfolio-Web/static/media/CV-DUBEE-INGENIEUR-ELECTRONIQUE.e8bfa15d8930173c99dd.pdf",
     "static/media/D5.jpeg": "/MD-Portfolio-Web/static/media/D5.9caae39f5b232a9b4d90.jpeg",
     "static/media/Patagonie11.jpeg": "/MD-Portfolio-Web/static/media/Patagonie11.9ab9cf24fa61c0e2261e.jpeg",
     "static/media/D4.jpeg": "/MD-Portfolio-Web/static/media/D4.44c34667c074f07ffebb.jpeg",
@@ -84,12 +85,12 @@
     "static/media/instagram.svg": "/MD-Portfolio-Web/static/media/instagram.08b285abb8e118b52637efa5d65c5367.svg",
     "index.html": "/MD-Portfolio-Web/index.html",
     "static/media/linkedIn.svg": "/MD-Portfolio-Web/static/media/linkedIn.721d5414c26365f117e71d46b6641cb2.svg",
-    "main.4237448d.css.map": "/MD-Portfolio-Web/static/css/main.4237448d.css.map",
-    "main.c93a6557.js.map": "/MD-Portfolio-Web/static/js/main.c93a6557.js.map",
+    "main.b89f6293.css.map": "/MD-Portfolio-Web/static/css/main.b89f6293.css.map",
+    "main.b31a10ea.js.map": "/MD-Portfolio-Web/static/js/main.b31a10ea.js.map",
     "453.ace21015.chunk.js.map": "/MD-Portfolio-Web/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4237448d.css",
-    "static/js/main.c93a6557.js"
+    "static/css/main.b89f6293.css",
+    "static/js/main.b31a10ea.js"
   ]
 }
