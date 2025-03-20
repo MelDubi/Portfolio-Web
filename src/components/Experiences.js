@@ -116,14 +116,23 @@ const ExperienceCard = ({ experience, isExpanded, onExpand, onCollapse }) => (
 );
 
 export const Experiences = () => {
-  const [expandedCards, setExpandedCards] = useState({});
+  const [expandedExperienceCards, setExpandedExperienceCards] = useState({});
+  const [expandedSchoolCards, setExpandedSchoolCards] = useState({});
 
-  const toggleExpand = (index) => {
-    setExpandedCards((prev) => ({ ...prev, [index]: !prev[index] }));
+  const toggleExperienceExpand = (index) => {
+    setExpandedExperienceCards((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  const toggleCollapse = (index) => {
-    setExpandedCards((prev) => ({ ...prev, [index]: false }));
+  const toggleSchoolExpand = (index) => {
+    setExpandedSchoolCards((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
+
+  const toggleExperienceCollapse = (index) => {
+    setExpandedExperienceCards((prev) => ({ ...prev, [index]: false }));
+  };
+
+  const toggleSchoolCollapse = (index) => {
+    setExpandedSchoolCards((prev) => ({ ...prev, [index]: false }));
   };
 
   return (
@@ -136,9 +145,9 @@ export const Experiences = () => {
             <ExperienceCard
               key={index}
               experience={experience}
-              isExpanded={expandedCards[index]}
-              onExpand={() => toggleExpand(index)}
-              onCollapse={() => toggleCollapse(index)}
+              isExpanded={expandedExperienceCards[index]}
+              onExpand={() => toggleExperienceExpand(index)}
+              onCollapse={() => toggleExperienceCollapse(index)}
             />
           ))}
         </VerticalTimeline>
@@ -150,9 +159,9 @@ export const Experiences = () => {
             <ExperienceCard
               key={index}
               experience={experience}
-              isExpanded={expandedCards[index]}
-              onExpand={() => toggleExpand(index)}
-              onCollapse={() => toggleCollapse(index)}
+              isExpanded={expandedSchoolCards[index]}
+              onExpand={() => toggleSchoolExpand(index)}
+              onCollapse={() => toggleSchoolCollapse(index)}
             />
           ))}
         </VerticalTimeline>
