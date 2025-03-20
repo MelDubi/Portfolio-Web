@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { experiences, schoolExperiences } from '../constants';  // Importez les deux tableaux
+import myResume from '../assets/resume/CV-DUBEE-INGENIEUR-ELECTRONIQUE.pdf';
 
 // Composant pour une carte d'expérience
 const ExperienceCard = ({ experience, isExpanded, onExpand, onCollapse }) => (
@@ -138,7 +139,7 @@ export const Experiences = () => {
   return (
     <section id="experiences">
       <div style={{ paddingTop: '60px', display: 'flex', flexDirection: 'column', padding: '0 2rem' }}>
-      <p style={{ fontSize: '20px', fontStyle: 'italic', textAlign: 'center', color: '#666' }}>What I've done so far..</p>
+        <p style={{ fontSize: '20px', fontStyle: 'italic', textAlign: 'center', color: '#666' }}>What I've done so far..</p>
         <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px' }}>Work Experience</h2>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
@@ -151,9 +152,8 @@ export const Experiences = () => {
             />
           ))}
         </VerticalTimeline>
-      </div>
-      <div style={{ marginTop: '40px', display: 'flex', flexDirection: 'column', padding: '0 2rem' }}>
-        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px' }}>School Experience</h2>
+
+        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px', marginTop: '40px' }}>School Experience</h2>
         <VerticalTimeline>
           {schoolExperiences.map((experience, index) => (
             <ExperienceCard
@@ -165,6 +165,37 @@ export const Experiences = () => {
             />
           ))}
         </VerticalTimeline>
+        <div style={{ textAlign: 'center', marginTop: '40px' }}>
+          <a 
+            href={myResume}
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              padding: '12px 24px',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              backgroundColor: '#555',
+              borderRadius: '30px',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease',
+              border: '2px solid #555',
+            }}
+            onMouseOver={(e) => {
+              e.target.style.color = '#000';
+              e.target.style.backgroundColor = '#fff';
+              e.target.style.borderColor = '#fff';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.color = '#fff';
+              e.target.style.backgroundColor = '#555';
+              e.target.style.borderColor = '#555';
+            }}
+          >
+            Download my resume
+          </a>
+        </div>
       </div>
     </section>
   );
