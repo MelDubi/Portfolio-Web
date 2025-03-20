@@ -39,7 +39,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/MD-Portfolio-Web">  {/* Ajout du basename ici */}
       <AppContent />
     </Router>
   );
