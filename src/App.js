@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';  // Pas besoin de BrowserRouter ici
 import { NavBar } from './components/NavBar';
 import { Banner } from './components/Banner';
 import { Skills } from './components/Skills';
@@ -10,15 +10,9 @@ import { Contact } from "./components/Contact";
 import PassionDetails from './components/PassionDetails'; // Nouvelle page pour afficher le détail
 
 const AppContent = () => {
-  const location = useLocation(); // Récupère l'URL actuelle
-
-  // Vérifie si l'URL actuelle est la page des détails (avec /passion/:id)
-  const isPassionDetailsPage = location.pathname.startsWith('/passion/');
-
   return (
     <div className="App">
-      {/* Affiche la NavBar seulement si on n'est pas sur la page des détails */}
-      {!isPassionDetailsPage && <NavBar />}
+      <NavBar />
       
       <Routes>
         <Route path="/" element={
@@ -39,9 +33,7 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router basename="/MD-Portfolio-Web">  {/* Ajout du basename ici */}
-      <AppContent />
-    </Router>
+    <AppContent />
   );
 }
 
