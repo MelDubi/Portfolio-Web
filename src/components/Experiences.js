@@ -139,8 +139,8 @@ export const Experiences = () => {
   return (
     <section id="experiences">
       <div style={{ paddingTop: '60px', display: 'flex', flexDirection: 'column', padding: '0 2rem' }}>
-        <p style={{ fontSize: '20px', fontStyle: 'italic', textAlign: 'center', color: '#666' }}>What I've done so far..</p>
-        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px' }}>Work Experience</h2>
+      <p style={{ fontSize: '20px', fontStyle: 'italic', textAlign: 'center', color: '#666' }}>Ce que j'ai accompli jusqu'à présent..</p>
+        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px' }}>Expérience professionnelle</h2>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
@@ -153,7 +153,7 @@ export const Experiences = () => {
           ))}
         </VerticalTimeline>
 
-        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px', marginTop: '40px' }}>School Experience</h2>
+        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px', marginTop: '40px' }}>Scolarité</h2>
         <VerticalTimeline>
           {schoolExperiences.map((experience, index) => (
             <ExperienceCard
@@ -193,7 +193,7 @@ export const Experiences = () => {
               e.target.style.borderColor = '#555';
             }}
           >
-            Download my resume
+            Télécharger mon CV
           </a>
         </div>
       </div>

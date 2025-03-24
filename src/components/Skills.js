@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import code from "../assets/icons/code.png";
 import ide from "../assets/icons/ide.png";
 import github from "../assets/icons/github.png";
@@ -12,10 +12,13 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 export const Skills = () => {
+  const [activeIndex, setActiveIndex] = useState(4); // Initialiser au skill du milieu
+  const carouselRef = useRef(null); // Référence pour le carrousel
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 5
+      items: 3
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -43,32 +46,11 @@ export const Skills = () => {
     { name: "Langues", list: ["Français (langue maternelle)", "Anglais (TOEIC)", "Espagnol (B2)"], icon: langue }
   ];
 
-  useEffect(() => {
-    let timeout;
-    const skillSection = document.querySelector('.skill');
-    
-    const handleMouseMoveOrClick = () => {
-      clearTimeout(timeout);
-      document.querySelectorAll('.react-multiple-carousel__arrow--left, .react-multiple-carousel__arrow--right').forEach(arrow => {
-        arrow.style.opacity = 1;
-      });
+  const handleDotClick = (index) => {
+    setActiveIndex(index);
+    carouselRef.current.goToSlide(index);
+  };
 
-      timeout = setTimeout(() => {
-        document.querySelectorAll('.react-multiple-carousel__arrow--left, .react-multiple-carousel__arrow--right').forEach(arrow => {
-          arrow.style.opacity = 0;
-        });
-      }, 1500);
-    };
-
-    skillSection.addEventListener('mousemove', handleMouseMoveOrClick);
-    skillSection.addEventListener('click', handleMouseMoveOrClick);
-
-    return () => {
-      skillSection.removeEventListener('mousemove', handleMouseMoveOrClick);
-      skillSection.removeEventListener('click', handleMouseMoveOrClick);
-      clearTimeout(timeout);
-    };
-  }, []);
 
   return (
     <section className="skill" id="skills">
@@ -84,33 +66,42 @@ export const Skills = () => {
                 color: '#666', 
                 marginBottom: '20px'
               }}>
-              What I know..
+              Ce que je connais..
             </p>
 
             <div className="skill-bx wow zoomIn">
               <h2 style={{ marginBottom: '60px', textAlign: 'center' }}>Skills</h2>
-              <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+              <Carousel 
+                ref={carouselRef}
+                responsive={responsive} 
+                infinite={true} 
+                className="owl-carousel owl-theme skill-slider"
+                itemClass="carousel-item-padding-40-px"
+                arrows={false} 
+                autoPlay={false}
+                swipeable={true}
+              >
                 {skills.map((skill, index) => (
                   <div className="item" key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <div 
                       style={{
-                        width: '120px',    // Cercles de 120px
-                        height: '120px',   // Cercles de 120px
+                        width: '120px',    
+                        height: '120px',   
                         borderRadius: '50%', 
-                        backgroundColor: skill.icon === github ? 'transparent' : '#fff',  // Fond blanc sauf pour GitHub
+                        backgroundColor: skill.icon === github ? 'transparent' : '#fff',  
                         display: 'flex', 
                         justifyContent: 'center', 
                         alignItems: 'center',
-                        padding: skill.icon === github ? '0' : '5px',  // Pas de padding pour GitHub, un peu pour les autres
-                        marginTop: '10px'  // Descendre légèrement les logos dans leurs cercles
+                        padding: skill.icon === github ? '0' : '5px',  
+                        marginTop: '10px'  
                       }}
                     >
                       <img 
                         src={skill.icon} 
                         alt={skill.name} 
                         style={{
-                          width: skill.icon === github ? '100%' : skill.icon === ide ? '85%' : '75%',  // Agrandir IDE et GitHub
-                          marginTop: skill.icon !== github ? '10px' : '0'  // Déplacer légèrement vers le bas les autres logos
+                          width: skill.icon === github ? '100%' : skill.icon === ide ? '85%' : '75%',  
+                          marginTop: skill.icon !== github ? '10px' : '0'  
                         }} 
                       />
                     </div>
@@ -123,6 +114,26 @@ export const Skills = () => {
                   </div>
                 ))}
               </Carousel>
+
+              <div className="carousel-bullets" style={{ textAlign: 'center', marginTop: '20px' }}>
+                {skills.map((_, index) => (
+                  <span 
+                    key={index}
+                    onClick={() => handleDotClick(index)} 
+                    style={{
+                      display: 'inline-block',
+                      width: '10px',
+                      height: '10px',
+                      borderRadius: '50%',
+                      backgroundColor: activeIndex === index ? '#fff' : 'transparent',  
+                      border: '2px solid #fff',  
+                      margin: '0 5px',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.3s ease, border-color 0.3s ease',
+                    }}
+                  ></span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -130,3 +141,4 @@ export const Skills = () => {
     </section>
   );
 };
+

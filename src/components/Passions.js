@@ -86,7 +86,7 @@ export const Passions = () => {
       <div className="text-center">
         <motion.div variants={textVariant()}>
           <p style={{ fontSize: '20px', fontStyle: 'italic', textAlign: 'center', color: '#666' }}>
-            What I like..
+            Ce que j'aime..
           </p>
           <h2 className={`${styles.sectionHeadTextLight}`} style={{ fontSize: '45px', fontWeight: '700', color: '#fff' }}>
           Passions

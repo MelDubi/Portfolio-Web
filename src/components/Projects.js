@@ -42,9 +42,9 @@ export const Projects = () => {
         <Row className="justify-content-center">
           <Col size={12}>
             <p style={{ fontSize: '20px', fontStyle: 'italic', textAlign: 'center', color: '#666' }}>
-              What I do..
+              Ce que j'ai fait..
             </p>
-            <h2>Projects</h2>
+            <h2>Projets</h2>
             <p>Voici quelques-uns de mes projets réalisés durant mon cursus scolaire ainsi que sur mon temps libre.</p>
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
               <Tab.Content id="slideInUp">

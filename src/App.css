@@ -306,8 +306,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  object-fit: cover; /* Assure que l'image couvre entièrement le conteneur */
-  object-position: top; /* Centrer l'image sur le haut */
+  object-fit: cover;
   margin-right: 40px; /* Espace entre l'image et le texte */
 }
 
@@ -373,19 +372,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   }
 }
 
-/* Media Queries pour ajuster la taille et l'espacement sur les petits écrans */
-@media (max-width: 768px) {
-  .banner-content {
-    width: 90%; /* Réduit la largeur de la boîte sur les petits écrans */
-    max-width: 600px; /* Limite la largeur à 600px */
-    height: auto; /* Hauteur automatique pour s'ajuster à l'écran */
-    flex-direction: column; /* Met les éléments en colonne sur petits écrans */
-    padding: 20px; /* Maintien le padding */
-    margin-left: auto;
-    margin-right: auto; /* Centrer la boîte sur l'écran */
-  }
-}
-
 /************ Skills Css ************/
 .skill {
   position: relative;
@@ -427,27 +413,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   margin: 0 auto 15px auto;
 }
 
-.skill-slider .react-multiple-carousel__arrow--left,
-.skill-slider .react-multiple-carousel__arrow--right {
-  opacity: 0; /* Flèches invisibles par défaut */
-  transition: opacity 0.3s ease; /* Animation fluide */
-}
-
-.skill-slider .react-multiple-carousel__arrow--left {
-  left: 10px;
-  transform: translateY(-50%);
-}
-
-.skill-slider .react-multiple-carousel__arrow--right {
-  right: 10px;
-  transform: translateY(-50%);
-}
-
-.skill:hover .react-multiple-carousel__arrow--left,
-.skill:hover .react-multiple-carousel__arrow--right {
-  opacity: 1; /* Affiche les flèches lors du survol */
-}
-
 .background-img-skills {
   position: absolute;
   top: 0;
@@ -469,53 +434,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   margin-bottom: 10px;
   z-index: 1;
 }
-
-/* Pour les écrans moyens (768px - 1200px) */
-@media (max-width: 1200px) and (min-width: 768px) {
-  .skill-slider .react-multiple-carousel__arrow--left {
-    left: 5px;
-  }
-  
-  .skill-slider .react-multiple-carousel__arrow--right {
-    right: 5px;
-  }
-
-  .skill-slider .item img {
-    width: 40%;
-  }
-}
-
-/* Pour les petits écrans (< 768px) */
-@media (max-width: 768px) and (min-width: 400px) {
-  .skill-slider .react-multiple-carousel__arrow--left {
-    left: -1px;
-  }
-  
-  .skill-slider .react-multiple-carousel__arrow--right {
-    right: -1px;
-  }
-
-  .skill-slider .item img {
-    width: 40%;
-  }
-}
-
-/* Pour les très petits écrans (< 400px) */
-@media (max-width: 400px) {
-  .skill-slider .react-multiple-carousel__arrow--left {
-    left: 10px; /* Augmente l'espace à gauche */
-  }
-
-  .skill-slider .react-multiple-carousel__arrow--right {
-    right: 10px; /* Augmente l'espace à droite */
-  }
-
-  .skill-slider .item img {
-    width: 50%; /* Réduit la taille de l'image pour mieux s'adapter */
-  }
-}
-
-
 
 /************ Projects Css ************/
 .project {

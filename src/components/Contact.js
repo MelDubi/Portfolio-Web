@@ -36,13 +36,13 @@ export const Contact = () => {
           setLoading(false);
           setMessageSent(true);
           setTimeout(() => setMessageSent(false), 3000); // Message envoyé disparaît après 3s
-          alert('Thank you. I will get back to you as soon as possible.');
+          alert('Merci. Je reviendrai vers vous dans les plus brefs délais.');
           setForm({ name: '', email: '', message: '' });
         },
         (error) => {
           setLoading(false);
           console.log(error);
-          alert('Something went wrong. Please try again.');
+          alert('L\'envoi n\'a pas fonctionné. Merci de réessayer.');
         }
       );
   };
@@ -50,41 +50,41 @@ export const Contact = () => {
   return (
     <section className="contact" id="contact">
       <div className="contact-container">
-        <p className="contact-subtitle">Contact me..</p>
+        <p className="contact-subtitle">Pour me contacter..</p>
         <div className="contact-bx">
           <h3 className="contact-title">Contact</h3>
           <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
             <div>
-              <label>Your Name</label>
+              <label>Votre Nom</label>
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="What's your name?"
+                placeholder="Quel est votre nom?"
                 required
               />
             </div>
 
             <div>
-              <label>Your Email</label>
+              <label>Votre Email</label>
               <input
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="What's your email?"
+                placeholder="Quel est votre email?"
                 required
               />
             </div>
 
             <div>
-              <label>Your Message</label>
+              <label>Votre Message</label>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="What's your message?"
+                placeholder="Quel est votre message?"
                 required
               />
             </div>
@@ -96,8 +96,8 @@ export const Contact = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <img src={isHovered ? sendHover : send} alt="Send" className="send-icon" />
-              {loading ? 'Sending...' : messageSent ? 'Sent!' : 'Send'}
+              <img src={isHovered ? sendHover : send} alt="Envoyer" className="send-icon" />
+              {loading ? 'Envoi en cours...' : messageSent ? 'Envoyé!' : 'Envoyer'}
             </button>
           </form>
         </div>

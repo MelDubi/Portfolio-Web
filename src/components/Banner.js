@@ -48,7 +48,7 @@ export const Banner = () => {
             <Container>
                 <Row className="align-items-center justify-content-center">
                     <Col xs={12} md={8} xl={7}>
-                        <span className="tagline">Welcome to my Portfolio</span>
+                        <span className="tagline">Bienvenue sur mon Portfolio</span>
                         <div className="banner-content">
                             <img
                                 src={profile}
