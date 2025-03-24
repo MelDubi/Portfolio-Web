@@ -28,6 +28,7 @@ body {
   background-repeat: no-repeat; /* L'image ne se répète pas */
   color: #fff !important; /* Texte en blanc */
   font-family: 'Central', sans-serif !important; /* Utilisation de la police personnalisée */
+  overflow-x: hidden;
 }
 
 #home, #skills, #experiences, #projects, #passions, #contact {
@@ -342,33 +343,34 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 /* Media Queries pour ajuster la taille et l'espacement sur les petits écrans */
 @media (max-width: 1250px) {
   .banner-content {
-    width: 90%; /* Réduit la largeur de la boîte sur les petits écrans */
+    width: 100%; /* Prendre toute la largeur de l'écran */
+    max-width: 380px; /* Limiter à 90% de la largeur de l'écran pour éviter de toucher les bords */
     height: auto; /* Hauteur automatique pour s'ajuster à l'écran */
-    flex-direction: column; /* Met les éléments en colonne sur petits écrans */
-    padding: 20px; /* Maintien le padding */
+    flex-direction: column; /* Aligner les éléments en colonne */
+    padding: 20px; /* Ajoute un padding autour du contenu */
   }
 
   .profile-image {
-    width: 150px; /* Plus petite taille pour l'image */
+    width: 150px;
     height: 150px;
-    border-radius: 50%; /* Conserve l'aspect circulaire de l'image */
-    object-fit: cover; /* Assure que l'image reste bien cadrée */
-    margin-right: 0; /* Pas d'espace entre l'image et le texte */
-    margin-bottom: 20px; /* Espacement sous l'image */
-    margin-top: 20px; /* Espacement au-dessus de la photo pour éviter qu'elle chevauche la tagline */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   .text-content {
-    text-align: center; /* Centrer le texte sur les petits écrans */
+    text-align: center;
     max-width: 100%; /* Le texte prend toute la largeur disponible */
   }
 
   .text-content h1 {
-    font-size: 24px; /* Réduit la taille du titre */
+    font-size: 24px;
   }
 
   .text-content p {
-    font-size: 16px; /* Réduit la taille du texte */
+    font-size: 16px;
   }
 }
 
