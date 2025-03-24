@@ -306,7 +306,8 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: cover; /* Assure que l'image couvre entièrement le conteneur */
+  object-position: top; /* Centrer l'image sur le haut */
   margin-right: 40px; /* Espace entre l'image et le texte */
 }
 
@@ -369,6 +370,19 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
   .text-content p {
     font-size: 16px; /* Réduit la taille du texte */
+  }
+}
+
+/* Media Queries pour ajuster la taille et l'espacement sur les petits écrans */
+@media (max-width: 768px) {
+  .banner-content {
+    width: 90%; /* Réduit la largeur de la boîte sur les petits écrans */
+    max-width: 600px; /* Limite la largeur à 600px */
+    height: auto; /* Hauteur automatique pour s'ajuster à l'écran */
+    flex-direction: column; /* Met les éléments en colonne sur petits écrans */
+    padding: 20px; /* Maintien le padding */
+    margin-left: auto;
+    margin-right: auto; /* Centrer la boîte sur l'écran */
   }
 }
 
@@ -485,6 +499,23 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     width: 40%;
   }
 }
+
+/* Pour les très petits écrans (< 400px) */
+@media (max-width: 400px) {
+  .skill-slider .react-multiple-carousel__arrow--left {
+    left: 10px; /* Augmente l'espace à gauche */
+  }
+
+  .skill-slider .react-multiple-carousel__arrow--right {
+    right: 10px; /* Augmente l'espace à droite */
+  }
+
+  .skill-slider .item img {
+    width: 50%; /* Réduit la taille de l'image pour mieux s'adapter */
+  }
+}
+
+
 
 /************ Projects Css ************/
 .project {

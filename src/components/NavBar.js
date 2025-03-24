@@ -53,9 +53,6 @@ export const NavBar = () => {
           <a href="https://github.com/MelDubi" target="_blank" rel="noopener noreferrer">
             <img src={github} alt="GitHub" />
           </a>
-          <a href="https://www.instagram.com/melvin.dubee/" target="_blank" rel="noopener noreferrer">
-            <img src={instagram} alt="Instagram" />
-          </a>
         </div>
         <NavbarToggle aria-controls="navbar-nav" onClick={handleToggle} />
         <NavbarCollapse id="navbar-nav" in={menuOpen}>

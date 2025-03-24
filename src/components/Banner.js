@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import profile from "../assets/img/profile.jpg";
+import profile from "../assets/img/profile.JPEG";
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const toRotate = ["Bonjour, je m'appelle Melvin, ingénieur en systèmes embarqués"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(100);
-    const [showParagraphs, setShowParagraphs] = useState([false, false, false]);  // Gérer l'affichage des paragraphes
-    const period = 1000;
-    const [isTextComplete, setIsTextComplete] = useState(false); // Nouvel état pour savoir si l'H1 est complet
+    const [showParagraphs, setShowParagraphs] = useState([false, false, false]);
+    const period = 800;
+    const [isTextComplete, setIsTextComplete] = useState(false);
 
     useEffect(() => {
         const ticker = setInterval(() => {
@@ -20,23 +20,12 @@ export const Banner = () => {
     }, [text, delta]);
 
     useEffect(() => {
-        // Vérifier si l'H1 est complet pour démarrer l'affichage des paragraphes
         if (isTextComplete) {
-            const timeout = setTimeout(() => {
-                setShowParagraphs([true, false, false]);
-            }, 1000); // Afficher le premier paragraphe après 1 seconde
-
-            setTimeout(() => {
-                setShowParagraphs([true, true, false]);
-            }, 2500); // Afficher le deuxième après 1.5 secondes
-
-            setTimeout(() => {
-                setShowParagraphs([true, true, true]);
-            }, 4000); // Afficher le troisième après 2 secondes
-
-            return () => clearTimeout(timeout);
+            setTimeout(() => setShowParagraphs([true, false, false]), 1000);
+            setTimeout(() => setShowParagraphs([true, true, false]), 2500);
+            setTimeout(() => setShowParagraphs([true, true, true]), 4000);
         }
-    }, [isTextComplete]); // Effect uniquement après que le texte soit complet
+    }, [isTextComplete]);
 
     const tick = () => {
         let i = loopNum % toRotate.length;
@@ -46,7 +35,7 @@ export const Banner = () => {
         setText(updatedText);
 
         if (updatedText === fullText) {
-            setIsTextComplete(true); // Le texte est maintenant complet
+            setIsTextComplete(true);
             setTimeout(() => {
                 setLoopNum(loopNum + 1);
                 setDelta(period);
@@ -55,7 +44,7 @@ export const Banner = () => {
     };
 
     return (
-        <section className="banner" id="home">
+        <section className="banner max-w-[90%] mx-auto" id="home">
             <Container>
                 <Row className="align-items-center justify-content-center">
                     <Col xs={12} md={8} xl={7}>
