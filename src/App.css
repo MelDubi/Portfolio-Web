@@ -340,37 +340,34 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   transform: translateY(0);
 }
 
-/* Media Queries pour ajuster la taille et l'espacement sur les petits écrans */
-@media (max-width: 1250px) {
+/* Ajustement de la largeur de la boîte banner pour les écrans plus petits */
+@media (max-width: 768px) {
   .banner-content {
-    width: 100%; /* Prendre toute la largeur de l'écran */
-    max-width: 380px; /* Limiter à 90% de la largeur de l'écran pour éviter de toucher les bords */
-    height: auto; /* Hauteur automatique pour s'ajuster à l'écran */
-    flex-direction: column; /* Aligner les éléments en colonne */
-    padding: 20px; /* Ajoute un padding autour du contenu */
+    width: 90%; /* Adapte la largeur à 90% de l'écran */
+    max-width: 400px; /* Limite la largeur à 400px pour éviter que la boîte soit trop petite */
+    margin: 0 auto; /* Centre la boîte horizontalement */
+    height: auto; /* Permet à la hauteur de s'ajuster */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    padding: 20px; /* Ajoute un padding pour un peu d'espace autour du contenu */
   }
 
   .profile-image {
-    width: 150px;
+    width: 150px; /* Réduit la taille de l'image du profil */
     height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 0;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 20px; /* Ajoute un espace sous l'image */
   }
 
   .text-content {
-    text-align: center;
+    text-align: center; /* Centre le texte */
     max-width: 100%; /* Le texte prend toute la largeur disponible */
   }
 
   .text-content h1 {
-    font-size: 24px;
+    font-size: 24px; /* Réduit la taille du titre */
   }
 
   .text-content p {
-    font-size: 16px;
+    font-size: 16px; /* Réduit la taille du texte */
   }
 }
 
