@@ -1,19 +1,24 @@
 import { useState, useEffect, useRef } from "react"; 
 import { Container, Row, Col, Tab } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import comming from "../assets/img/black-concrete-wall.jpg";
+import compilateur from "../assets/img/compilateur.jpg";
+import machine from "../assets/img/machine-learning.jpg";
+import son from "../assets/img/son.jpg";
+import boat from "../assets/img/boat.jpg";
+import portfolio from "../assets/img/portfolio.jpg";
+import microprocesseur from "../assets/img/microprocesseur.jpg";
 
 export const Projects = () => {
   const [columnCount, setColumnCount] = useState(3); // Par défaut, 3 colonnes
   const sectionRef = useRef(null);
 
   const projects = [
-    { title: "Coming soon..", description: "Design & Development", imgUrl: comming },
-    { title: "Coming soon..", description: "Design & Development", imgUrl: comming },
-    { title: "Coming soon..", description: "Design & Development", imgUrl: comming },
-    { title: "Coming soon..", description: "Design & Development", imgUrl: comming },
-    { title: "Coming soon..", description: "Design & Development", imgUrl: comming },
-    { title: "Coming soon..", description: "Design & Development", imgUrl: comming },
+    { title: "Compilateur", description: "Création d'un language permettant la réalisation de plan de maison à partir d'un texte ou d'un mode interactif.", imgUrl: compilateur, url: "https://github.com/MelDubi/depot-ensta-compilateur" },
+    { title: "Machine learning", description: "Travaux effectués à l'Ensta Bretagne en Machine Learning", imgUrl: machine, url: "https://github.com/MelDubi/depot-ensta-python" },
+    { title: "Traitement du son", description: "Enregistrement d'un son de quelques secondes sur une carte STM32 fourni via un micro MEMS et rejoué sur des hauts-parleurs via un DAC.", imgUrl: son, url: "https://github.com/MelDubi/depot-ensta-STM32-Traitement-Son" },
+    { title: "Smart boat", description: "Ce projet met en œuvre un système intelligent intégrant une interface graphique basé sur egui et une commande vocale pour le contrôle d'une maquette de bateau. Différents capteurs de navigation et des moteurs permettent de simuler une navigation en sécurité et assisté.", imgUrl: boat, url: "https://github.com/MelDubi/depot-smart-boat" },
+    { title: "Portfolio", description: "Projet pour designer et déployer ce Portfolio", imgUrl: portfolio, url: "https://github.com/MelDubi/MD-Portfolio-Web" },
+    { title: "Coming soon..", description: "Microprocesseur", imgUrl: microprocesseur, url: "https://github.com/MelDubi/depot-ensta-microprocesseur" },
   ];
 
   useEffect(() => {
