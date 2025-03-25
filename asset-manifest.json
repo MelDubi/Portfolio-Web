@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/MD-Portfolio-Web/static/css/main.a5d7aee6.css",
-    "main.js": "/MD-Portfolio-Web/static/js/main.9ca8e6b8.js",
+    "main.js": "/MD-Portfolio-Web/static/js/main.f1dced2d.js",
     "static/js/453.ace21015.chunk.js": "/MD-Portfolio-Web/static/js/453.ace21015.chunk.js",
-    "static/media/black-concrete-wall.jpg": "/MD-Portfolio-Web/static/media/black-concrete-wall.62c7bdad34af7b8e3e1f.jpg",
+    "static/media/son.jpg": "/MD-Portfolio-Web/static/media/son.bbe950f0cc916b5d2de0.jpg",
+    "static/media/boat.jpg": "/MD-Portfolio-Web/static/media/boat.7852349fb860ae340c6f.jpg",
     "static/media/D7.jpeg": "/MD-Portfolio-Web/static/media/D7.9375b1b41414e39b35c9.jpeg",
     "static/media/D10.jpeg": "/MD-Portfolio-Web/static/media/D10.5441d145a353c40a8bf9.jpeg",
     "static/media/D12.jpeg": "/MD-Portfolio-Web/static/media/D12.8608ee72751a0203b737.jpeg",
@@ -13,11 +14,14 @@
     "static/media/D2.jpeg": "/MD-Portfolio-Web/static/media/D2.7cc37905a656bbe0f755.jpeg",
     "static/media/bolivie18.jpeg": "/MD-Portfolio-Web/static/media/bolivie18.dc76db9fb33dc20d5500.jpeg",
     "static/media/profile.JPEG": "/MD-Portfolio-Web/static/media/profile.8473c0ba93addc9a7353.JPEG",
+    "static/media/compilateur.jpg": "/MD-Portfolio-Web/static/media/compilateur.94670024880a29f10f20.jpg",
+    "static/media/portfolio.jpg": "/MD-Portfolio-Web/static/media/portfolio.a8f339779ff163a0e553.jpg",
     "static/media/D11.jpeg": "/MD-Portfolio-Web/static/media/D11.2020206aafc0fc6c0ffc.jpeg",
     "static/media/H4.jpeg": "/MD-Portfolio-Web/static/media/H4.604620535944eed1f356.jpeg",
     "static/media/H7.jpeg": "/MD-Portfolio-Web/static/media/H7.8c300534ccf60f744e69.jpeg",
     "static/media/H3.jpeg": "/MD-Portfolio-Web/static/media/H3.4f80ff1e80d8639125e2.jpeg",
     "static/media/Patagonie6.jpeg": "/MD-Portfolio-Web/static/media/Patagonie6.9ef01e0d1fb919782d2c.jpeg",
+    "static/media/microprocesseur.jpg": "/MD-Portfolio-Web/static/media/microprocesseur.0fe286c73389ae0cd74c.jpg",
     "static/media/H2.jpeg": "/MD-Portfolio-Web/static/media/H2.42d0ca815ae8a46b542a.jpeg",
     "static/media/bolivie17.jpeg": "/MD-Portfolio-Web/static/media/bolivie17.a8eab2c1a64a4d61f947.jpeg",
     "static/media/D1.jpeg": "/MD-Portfolio-Web/static/media/D1.124322291ba86bf1ceb0.jpeg",
@@ -27,6 +31,7 @@
     "static/media/Patagonie7.jpeg": "/MD-Portfolio-Web/static/media/Patagonie7.ece637ba9ada213f5ede.jpeg",
     "static/media/bolivie9.jpeg": "/MD-Portfolio-Web/static/media/bolivie9.2b631c09a1aef4b60c12.jpeg",
     "static/media/bolivie10.jpeg": "/MD-Portfolio-Web/static/media/bolivie10.fc4af4e53190db6b7c7f.jpeg",
+    "static/media/machine-learning.jpg": "/MD-Portfolio-Web/static/media/machine-learning.4395aecdb76f2909d7fe.jpg",
     "static/media/H6.jpeg": "/MD-Portfolio-Web/static/media/H6.235992c9b8da4d1d6a5d.jpeg",
     "static/media/bolivie12.jpeg": "/MD-Portfolio-Web/static/media/bolivie12.c81253b3e7bafafc0dda.jpeg",
     "static/media/bolivie14.jpeg": "/MD-Portfolio-Web/static/media/bolivie14.e121de1f22d6e537d1fd.jpeg",
@@ -86,11 +91,11 @@
     "index.html": "/MD-Portfolio-Web/index.html",
     "static/media/linkedIn.svg": "/MD-Portfolio-Web/static/media/linkedIn.721d5414c26365f117e71d46b6641cb2.svg",
     "main.a5d7aee6.css.map": "/MD-Portfolio-Web/static/css/main.a5d7aee6.css.map",
-    "main.9ca8e6b8.js.map": "/MD-Portfolio-Web/static/js/main.9ca8e6b8.js.map",
+    "main.f1dced2d.js.map": "/MD-Portfolio-Web/static/js/main.f1dced2d.js.map",
     "453.ace21015.chunk.js.map": "/MD-Portfolio-Web/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a5d7aee6.css",
-    "static/js/main.9ca8e6b8.js"
+    "static/js/main.f1dced2d.js"
   ]
 }
