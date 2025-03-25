@@ -84,7 +84,7 @@ nav.navbar.scrolled {
 
 
 nav.navbar.scrolled .navbar-nav .nav-link.navbar-link {
-  color: #fff !important; /* Texte blanc */
+  color: #fff !important; 
 }
 
 /* Style normal après scroll */
@@ -275,7 +275,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 20%);
+  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.7) -5.91%, rgba(74, 47, 189, 0.7) 111.58%);
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   display: inline-block;
@@ -343,16 +343,9 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 @media (max-width: 1300px) {
   .banner-content {
     width: 1000px; /* Adapte la largeur à 90% de l'écran */
-
     height: 500px; /* Permet à la hauteur de s'ajuster */
     flex-direction: row; /* Aligne les éléments en colonne */
     padding: 20px; /* Ajoute un padding pour un peu d'espace autour du contenu */
-  }
-
-  .profile-image {
-    width: 150px; /* Réduit la taille de l'image du profil */
-    height: 150px;
-    margin-bottom: 20px; /* Ajoute un espace sous l'image */
   }
 
   .text-content {
@@ -376,12 +369,14 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     height: auto; /* Permet à la hauteur de s'ajuster */
     flex-direction: column; /* Aligne les éléments en colonne */
     padding: 20px; /* Ajoute un padding pour un peu d'espace autour du contenu */
+    gap: 20px;
   }
 
   .profile-image {
     width: 150px; /* Réduit la taille de l'image du profil */
     height: 150px;
     margin-bottom: 20px; /* Ajoute un espace sous l'image */
+    margin: 0 auto; /* Centre horizontalement si nécessaire */
   }
 
   .text-content {
@@ -504,7 +499,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, rgba(255, 255, 255, 0.6) -5.91%, rgba(255, 255, 255, 0.6) 111.58%);
+  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.7) -5.91%, rgba(74, 47, 189, 0.7) 111.58%);
   opacity: 0.85;
   position: absolute;
   width: 100%;
@@ -547,128 +542,8 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   letter-spacing: 0.8px;
 }
 
-/* Section Contact */
-.contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Centre verticalement sur toute la hauteur de la page */
-  padding: 150px 20px;
-}
 
-/* Conteneur principal */
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 700px;
-  transform: translateY(-80px); /* Remonte légèrement la section */
-}
 
-/* Sous-titre */
-.contact-subtitle {
-  font-size: 20px;
-  font-style: italic;
-  text-align: center;
-  color: #666;
-  margin-bottom: 50px;
-}
-
-/* Box contenant le formulaire */
-.contact-bx {
-  background: #151515;
-  border-radius: 64px;
-  text-align: center;
-  padding: 60px;
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Titre principal */
-.contact-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-/* Formulaire */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-}
-
-/* Labels */
-.contact-form label {
-  font-size: 16px;
-  color: #ccc;
-  font-weight: 500;
-  text-align: left;
-  margin-bottom: 5px;
-}
-
-/* Champs de saisie */
-.contact-form input,
-.contact-form textarea {
-  background-color: #2c2c2c;
-  color: #fff;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  font-size: 16px;
-  outline: none;
-  width: 100%;
-}
-
-/* Zone de texte */
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-/* Bouton */
-.contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #767676;
-  color: white;
-  font-weight: bold;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 16px;
-  width: 100%;
-  max-width: 250px;
-  margin: 20px auto 0 auto; /* Centrer le bouton */
-  gap: 10px;
-}
-
-/* Icône dans le bouton */
-.send-icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* Bouton hover */
-.contact-btn:hover {
-  background-color: #ffffff;
-  color: #000; /* Change la couleur du texte en noir */
-}
-
-.contact-btn:disabled {
-  background-color: #666;
-  cursor: not-allowed;
-}
 
 
 

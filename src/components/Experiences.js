@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { experiences, schoolExperiences } from '../constants';  // Importez les deux tableaux
+import { experiences, schoolExperiences } from '../constants'; // Importez les deux tableaux
 import myResume from '../assets/resume/CV-DUBEE-INGENIEUR-ELECTRONIQUE.pdf';
 
 // Composant pour une carte d'expérience
@@ -24,7 +24,7 @@ const ExperienceCard = ({ experience, isExpanded, onExpand, onCollapse }) => (
           color: '#ffffff',
           fontWeight: 'bold',
           fontSize: '20px',
-          backgroundColor: '#555',
+          background: 'linear-gradient(-90.21deg, rgba(170, 54, 124) -5.91%, rgba(74, 47, 189) 111.58%)', // Appliquer le dégradé ici
           padding: '6px 12px',
           borderRadius: '8px',
         }}
@@ -45,25 +45,32 @@ const ExperienceCard = ({ experience, isExpanded, onExpand, onCollapse }) => (
       cursor: 'pointer',
     }}
     icon={
-      <a href={experience.link} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
-        <img 
-          src={experience.icon} 
-          alt={experience.company_name} 
-          style={{ 
-            width: '60%', 
-            height: '60%', 
-            objectFit: 'contain', 
-            filter: 'grayscale(100%)', 
-            transition: 'filter 0.3s ease' 
+      <a
+        href={experience.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}
+      >
+        <img
+          src={experience.icon}
+          alt={experience.company_name}
+          style={{
+            width: '60%',
+            height: '60%',
+            objectFit: 'contain',
+            filter: 'grayscale(100%)',
+            transition: 'filter 0.3s ease',
           }}
-          onMouseOver={(e) => e.target.style.filter = 'grayscale(0%)'}
-          onMouseOut={(e) => e.target.style.filter = 'grayscale(100%)'}
+          onMouseOver={(e) => (e.target.style.filter = 'grayscale(0%)')}
+          onMouseOut={(e) => (e.target.style.filter = 'grayscale(100%)')}
         />
       </a>
     }
   >
     <div>
-      <h3 style={{ fontSize: '22px', fontWeight: 'bold', letterSpacing: '1px', marginBottom: '10px' }}>{experience.title}</h3>
+      <h3 style={{ fontSize: '22px', fontWeight: 'bold', letterSpacing: '1px', marginBottom: '10px' }}>
+        {experience.title}
+      </h3>
       <p style={{ fontSize: '18px', fontWeight: 'bold', color: '#444' }}>{experience.company_name}</p>
     </div>
     {isExpanded && (
@@ -139,8 +146,12 @@ export const Experiences = () => {
   return (
     <section id="experiences">
       <div style={{ paddingTop: '60px', display: 'flex', flexDirection: 'column', padding: '0 2rem' }}>
-      <p style={{ fontSize: '20px', fontStyle: 'italic', textAlign: 'center', color: '#666' }}>Ce que j'ai accompli jusqu'à présent..</p>
-        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px' }}>Expérience professionnelle</h2>
+        <p style={{ fontSize: '20px', fontStyle: 'italic', textAlign: 'center', color: '#666' }}>
+          Ce que j'ai accompli jusqu'à présent..
+        </p>
+        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px' }}>
+          Expérience professionnelle
+        </h2>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
@@ -153,7 +164,17 @@ export const Experiences = () => {
           ))}
         </VerticalTimeline>
 
-        <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px', marginTop: '40px' }}>Scolarité</h2>
+        <h2
+          style={{
+            fontSize: '36px',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginBottom: '20px',
+            marginTop: '40px',
+          }}
+        >
+          Scolarité
+        </h2>
         <VerticalTimeline>
           {schoolExperiences.map((experience, index) => (
             <ExperienceCard
@@ -166,9 +187,9 @@ export const Experiences = () => {
           ))}
         </VerticalTimeline>
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <a 
+          <a
             href={myResume}
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
             style={{
               display: 'inline-block',
@@ -176,21 +197,23 @@ export const Experiences = () => {
               fontSize: '18px',
               fontWeight: 'bold',
               color: '#fff',
-              backgroundColor: '#555',
+              background:
+                'linear-gradient(-90.21deg, rgba(170, 54, 124, 0.7) -5.91%, rgba(74, 47, 189, 0.7) 111.58%)', // Appliquer le dégradé ici
               borderRadius: '30px',
               textDecoration: 'none',
               transition: 'all 0.3s ease',
-              border: '2px solid #555',
+              border: '2px solid #fff',
             }}
             onMouseOver={(e) => {
               e.target.style.color = '#000';
-              e.target.style.backgroundColor = '#fff';
+              e.target.style.background = '#fff'; // Survol : dégradé plus marqué
               e.target.style.borderColor = '#fff';
             }}
             onMouseOut={(e) => {
               e.target.style.color = '#fff';
-              e.target.style.backgroundColor = '#555';
-              e.target.style.borderColor = '#555';
+              e.target.style.background =
+                'linear-gradient(-90.21deg, rgba(170, 54, 124, 0.7) -5.91%, rgba(74, 47, 189, 0.7) 111.58%)'; // Réinitialisation du dégradé au survol
+              e.target.style.borderColor = '#fff';
             }}
           >
             Télécharger mon CV

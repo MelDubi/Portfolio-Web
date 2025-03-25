@@ -50,7 +50,7 @@ const PassionCard = ({
               to={`/passion/${id}`} // Navigation vers la page de détails avec l'ID de la passion
               style={{
                 padding: '12px 18px',
-                backgroundColor: '#555',
+                background: 'linear-gradient(-90.21deg, rgba(170, 54, 124, 0.7) -5.91%, rgba(74, 47, 189, 0.7) 111.58%)', 
                 color: '#fff',
                 fontWeight: 'bold',
                 fontSize: '16px',
@@ -61,12 +61,14 @@ const PassionCard = ({
                 textDecoration: 'none', // Enlever le soulignement du lien
               }}
               onMouseOver={(e) => {
-                e.target.style.backgroundColor = '#fff';
-                e.target.style.color = '#333';
+                e.target.style.color = '#000';
+                e.target.style.background = '#fff'; // Survol : dégradé plus marqué
+                e.target.style.borderColor = '#fff';
               }}
               onMouseOut={(e) => {
-                e.target.style.backgroundColor = '#555';
                 e.target.style.color = '#fff';
+                e.target.style.background = 'linear-gradient(-90.21deg, rgba(170, 54, 124, 0.7) -5.91%, rgba(74, 47, 189, 0.7) 111.58%)'; // Réinitialisation du dégradé au survol
+                e.target.style.borderColor = '#fff';
               }}
             >
               VIEW
