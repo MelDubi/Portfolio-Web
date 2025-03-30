@@ -18,7 +18,7 @@ export const Projects = () => {
     { title: "Traitement du son", description: "Enregistrement d'un son de quelques secondes sur une carte STM32 fourni via un micro MEMS et rejoué sur des hauts-parleurs via un DAC.", imgUrl: son, url: "https://github.com/MelDubi/depot-ensta-STM32-Traitement-Son" },
     { title: "Smart boat", description: "Ce projet met en œuvre un système intelligent intégrant une interface graphique basé sur egui et une commande vocale pour le contrôle d'une maquette de bateau. Différents capteurs de navigation et des moteurs permettent de simuler une navigation en sécurité et assisté.", imgUrl: boat, url: "https://github.com/MelDubi/depot-smart-boat" },
     { title: "Portfolio", description: "Projet pour designer et déployer ce Portfolio", imgUrl: portfolio, url: "https://github.com/MelDubi/Portfolio-Web" },
-    { title: "Coming soon..", description: "Microprocesseur", imgUrl: microprocesseur, url: "https://github.com/MelDubi/depot-ensta-microprocesseur" },
+    { title: "Microprocesseur", description: "Ce projet met en oeuvre un simulateur de jeu d'instructions simulant l'exécution d'un processeur en interprétant son jeu d'instructions", imgUrl: microprocesseur, url: "https://github.com/MelDubi/depot-ensta-microprocesseur" },
   ];
 
   useEffect(() => {
