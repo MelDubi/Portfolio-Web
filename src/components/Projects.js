@@ -14,7 +14,7 @@ export const Projects = () => {
 
   const projects = [
     { title: "Compilateur", description: "Création d'un language permettant la réalisation de plan de maison à partir d'un texte ou d'un mode interactif.", imgUrl: compilateur, url: "https://github.com/MelDubi/depot-ensta-compilateur" },
-    { title: "Machine learning", description: "Travaux effectués à l'Ensta Bretagne en Machine Learning", imgUrl: machine, url: "https://github.com/MelDubi/depot-ensta-python" },
+    { title: "Machine learning", description: "Travaux effectués à l'Ensta Bretagne en Machine Learning", imgUrl: machine, url: "https://github.com/MelDubi/depot-ensta-python/tree/3A/machine_learning" },
     { title: "Traitement du son", description: "Enregistrement d'un son de quelques secondes sur une carte STM32 fourni via un micro MEMS et rejoué sur des hauts-parleurs via un DAC.", imgUrl: son, url: "https://github.com/MelDubi/depot-ensta-STM32-Traitement-Son" },
     { title: "Smart boat", description: "Ce projet met en œuvre un système intelligent intégrant une interface graphique basé sur egui et une commande vocale pour le contrôle d'une maquette de bateau. Différents capteurs de navigation et des moteurs permettent de simuler une navigation en sécurité et assisté.", imgUrl: boat, url: "https://github.com/MelDubi/depot-smart-boat" },
     { title: "Portfolio", description: "Projet pour designer et déployer ce Portfolio", imgUrl: portfolio, url: "https://github.com/MelDubi/Portfolio-Web" },
