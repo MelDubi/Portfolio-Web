@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+🌐 Explore My Work: Visit My Portfolio!
+
+Check out my projects and experience on my portfolio: [https://meldubi.github.io/Portfolio-Web/] 🚀
+
 ## Available Scripts
 
 In the project directory, you can run:
