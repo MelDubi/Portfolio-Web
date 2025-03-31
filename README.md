@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 🌐 Explore My Work: Visit My Portfolio!
 
-Check out my projects and experience on my portfolio: [https://meldubi.github.io/Portfolio-Web/] 🚀
+Check out my projects and experience on my portfolio: https://meldubi.github.io/Portfolio-Web/ 🚀
 
 ## Available Scripts
 
